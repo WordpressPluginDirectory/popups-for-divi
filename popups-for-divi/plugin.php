@@ -3,8 +3,8 @@
  * Enables JS popups within Divi.
  *
  * @package     Popups_For_Divi
- * @author      Philipp Stracker
- * @copyright   2020 Philipp Stracker
+ * @author      Divimode
+ * @copyright   2020 Divimode
  * @license     GPL-2.0-or-later
  *
  * Plugin Name: Popups for Divi
@@ -13,13 +13,13 @@
  * Author:      divimode.com
  * Author URI:  https://divimode.com/?utm_source=wpadmin&utm_medium=link&utm_campaign=popups-for-divi
  * Created:     30.12.2017
- * Version:     3.0.5
+ * Version:     3.0.6
  * Text Domain: divi-popup
  * Domain Path: /lang
  * License:     GPL v2 or later
  * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
  *
- * Copyright (C) 2017 Philipp Stracker
+ * Copyright (C) 2017 Divimode
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -43,7 +43,7 @@ defined( 'ABSPATH' ) || die();
  *
  * @var string
  */
-const DIVI_POPUP_VERSION = '3.0.5';
+const DIVI_POPUP_VERSION = '3.0.6';
 
 /**
  * Absolute path and file name of the main plugin file.

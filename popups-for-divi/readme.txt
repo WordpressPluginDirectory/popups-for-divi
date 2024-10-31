@@ -1,9 +1,9 @@
 === Popups for Divi ===
-Contributors: strackerphil-1
+Contributors: timstrifler, devjenndivilife, strackerphil-1
 Tags: popup, marketing, divi
 Requires at least: 4.0.0
-Tested up to: 6.4.1
-Stable tag: 3.0.5
+Tested up to: 6.6.2
+Stable tag: 3.0.6
 Requires PHP: 7.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -171,11 +171,14 @@ When you need additional features, then please have a look at our the Premium pl
 
 == Changelog ==
 
+= Version 3.0.6 =
+- Support WordPress 6.6.2 & Divi 4.26.1
+
 = Version 3.0.5 =
 * Fix: Hide the onboarding notice for non-admin users.
 * Change: Remove unused third-party integration with Forminator that could cause problems with Divi.
 
-Plugin tested with WordPress 6.4.1 and Divi 4.23.0
+Plugin tested with WordPress 5.9.0 and Divi 4.14.7
 
 = Version 3.0.3 =
 * Improve: Compatibility with WP Rocket 3.9.
