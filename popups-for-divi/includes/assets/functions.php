@@ -41,10 +41,28 @@ function pfd_assets_enqueue_js_library() {
 		return;
 	}
 
+	// Divi 5
+	$et_builder_d5_enabled = false;
+	if ( function_exists( 'et_builder_d5_enabled' ) 
+		&& et_builder_d5_enabled() ) {
+			
+		$et_builder_d5_enabled = true;
+	}
+	
 	if ( pfd_is_visual_builder() ) {
+		
 		$base_name = 'builder';
+		
+		
 	} elseif ( pfd_assets_need_js_api() ) {
+		
 		$base_name = 'front';
+		
+		if ( ! is_preview() ) {
+			
+			$et_builder_d5_enabled = false;
+		}
+		
 	} else {
 		// Not in builder mode, but also no front-end document: Do not load API.
 		return;
@@ -62,6 +80,15 @@ function pfd_assets_enqueue_js_library() {
 		// Divi 2.x or non-Divi theme. Limited support.
 		$is_divi_v3 = false;
 	}
+	
+	/**
+	* Check for 3rd party services fetch to show/hide popup by default
+	*
+	*/
+	// phpcs:disable WordPress.Security.NonceVerification
+	$nowprocket = isset( $_GET['nowprocket'] ) && '1' === $_GET['nowprocket'];
+	$no_optimize = isset( $_GET['no_optimize'] ) && '1' === $_GET['no_optimize'];
+	
 
 	$js_data = [];
 
@@ -384,12 +411,9 @@ function pfd_assets_enqueue_js_library() {
 	$js_data['sys'] = apply_filters( 'divimode_debug_infos', [] );
 	
 	$load_loader_module = true;
-	if ( function_exists( 'et_builder_d5_enabled' ) ) {
+	if ( $et_builder_d5_enabled ) {
 		
-		if ( et_builder_d5_enabled() && is_preview() ) {
-		
-			$load_loader_module = false;
-		}
+		$load_loader_module = false;
 	}
 
 	if ( $load_loader_module ) {
@@ -413,10 +437,26 @@ function pfd_assets_enqueue_js_library() {
 		'all'
 	);
 	
+	if ( !$nowprocket && !$no_optimize ) {
+		
+		wp_register_style(
+			'css-divi-area-popuphidden',
+			pfd_url( 'styles/front-popuphidden.min.css' ),
+			[],
+			$cache_version,
+			'all'
+		);
+	}
+	
 	}
 
 	wp_enqueue_script( 'js-divi-area' );
 	wp_enqueue_style( 'css-divi-area' );
+	
+	if ( !$nowprocket && !$no_optimize ) {
+		
+		wp_enqueue_style( 'css-divi-area-popuphidden' );
+	}
 
 	if ( 'front' === $base_name ) {
 		$inline_css = sprintf(

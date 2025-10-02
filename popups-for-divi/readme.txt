@@ -3,7 +3,7 @@ Contributors: timstrifler, devjenndivilife, strackerphil-1
 Tags: popup, marketing, divi
 Requires at least: 4.0.0
 Tested up to: 6.8
-Stable tag: 3.1.0
+Stable tag: 3.2.2
 Requires PHP: 7.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -174,6 +174,17 @@ When you need additional features, then please have a look at our the Premium pl
 5. Our free email course walks you through every aspect of the plugin - from the basics to advanced use-cases and techniques.
 
 == Changelog ==
+
+= Version 3.2.2 =
+- Improve Divi 5 popup HTML render
+
+= Version 3.2.1 =
+- Improve compatibility with WP Rocket.
+- Fix Popup showing before the page is loaded
+
+= Version 3.2.0 =
+- Full Support Divi 5
+- Compatibility with WP Rocket.
 
 = Version 3.1.0 =
 - Add limited support for Divi 5
