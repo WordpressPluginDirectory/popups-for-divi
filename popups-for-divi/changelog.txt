@@ -1,3 +1,6 @@
+= Version 3.2.3 =
+Plugin tested with WordPress 6.9
+
 = Version 3.2.2 =
 * Improve: Divi 5 popup HTML render
 

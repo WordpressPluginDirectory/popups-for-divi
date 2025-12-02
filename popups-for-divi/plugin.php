@@ -21,7 +21,7 @@
  * Author URI:  https://www.elegantthemes.com/marketplace/author/divimode/
  * // @end-etmarket-block
  * Created:     30.12.2017
- * Version:     3.2.2
+ * Version:     3.2.3
  * Text Domain: divi-popup
  * Domain Path: /lang
  * License:     GPL v2 or later
@@ -52,7 +52,7 @@ defined( 'ABSPATH' ) || die();
  *
  * @var string
  */
-const DIVI_POPUP_VERSION = '3.2.2';
+const DIVI_POPUP_VERSION = '3.2.3';
 
 /**
  * Absolute path and file name of the main plugin file.
