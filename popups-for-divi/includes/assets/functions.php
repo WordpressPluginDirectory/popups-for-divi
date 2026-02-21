@@ -44,7 +44,10 @@ function pfd_assets_enqueue_js_library() {
 	// Divi 5
 	$et_builder_d5_enabled = false;
 	if ( function_exists( 'et_builder_d5_enabled' ) 
-		&& et_builder_d5_enabled() ) {
+		&& et_builder_d5_enabled()
+		&& '1' === $wp_query->get( 'et_fb' )
+		// phpcs:ignore WordPress.Security.NonceVerification.Recommended
+		&& isset( $_GET['et_fb'] ) ) {
 			
 		$et_builder_d5_enabled = true;
 	}

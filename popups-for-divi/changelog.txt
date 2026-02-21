@@ -1,3 +1,8 @@
+= Version 3.2.4 =
+* Improve: Functionality to detect Popup triggers
+* Improve: Add Popup Settings panel in Divi 5 Section module
+* Fix: Front-end JavaScript files are now included regardless of post status
+
 = Version 3.2.3 =
 Plugin tested with WordPress 6.9
 
