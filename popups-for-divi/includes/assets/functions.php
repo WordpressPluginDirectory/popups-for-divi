@@ -45,9 +45,8 @@ function pfd_assets_enqueue_js_library() {
 	$et_builder_d5_enabled = false;
 	if ( function_exists( 'et_builder_d5_enabled' ) 
 		&& et_builder_d5_enabled()
-		&& '1' === $wp_query->get( 'et_fb' )
 		// phpcs:ignore WordPress.Security.NonceVerification.Recommended
-		&& isset( $_GET['et_fb'] ) ) {
+		&& isset( $_GET['et_vb_preview_id'] ) ) {
 			
 		$et_builder_d5_enabled = true;
 	}
@@ -60,11 +59,6 @@ function pfd_assets_enqueue_js_library() {
 	} elseif ( pfd_assets_need_js_api() ) {
 		
 		$base_name = 'front';
-		
-		if ( ! is_preview() ) {
-			
-			$et_builder_d5_enabled = false;
-		}
 		
 	} else {
 		// Not in builder mode, but also no front-end document: Do not load API.
@@ -418,7 +412,12 @@ function pfd_assets_enqueue_js_library() {
 		
 		$load_loader_module = false;
 	}
-
+	
+	if ( $et_builder_d5_enabled && is_preview() ) {
+		
+		$load_loader_module = false;
+	}
+	
 	if ( $load_loader_module ) {
 	
 	// Inject the loader module and the configuration object into the header.

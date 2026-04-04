@@ -53,10 +53,28 @@ function pfd_admin_plugin_row_meta( $plugin_meta, $plugin_file ) {
 		return $plugin_meta;
 	}
 
+	$plugin_name = 'Popups for Divi';
+	$slug = 'popups-for-divi';
+
 	$plugin_meta[] = sprintf(
 		'<a href="%s" target="_blank">%s</a>',
 		'https://divimode.com/divi-areas-pro/?utm_source=wpadmin&utm_medium=link&utm_campaign=popups-for-divi',
 		__( 'Divi Areas <strong>Pro</strong>', 'divi-popup' )
+	);
+	
+	$plugin_meta[2] = sprintf(
+		'<a href="%s" class="thickbox open-plugin-details-modal" aria-label="%s" data-title="%s">%s</a>',
+		esc_url(
+			str_replace( '&plugin=&', '&plugin=popups-for-divi&', 
+			network_admin_url(
+				'plugin-install.php?tab=plugin-information&plugin=&section=changelog&TB_iframe=true&width=600&height=550'
+			)
+			)
+		),
+		/* translators: %s: Plugin name. */
+		esc_attr( sprintf( __( 'More information about %s' ), $plugin_name ) ),
+		esc_attr( $plugin_name ),
+		__( 'View details' )
 	);
 
 	return $plugin_meta;

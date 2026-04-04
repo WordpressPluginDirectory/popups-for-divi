@@ -1,3 +1,13 @@
+= Version 3.2.7 =
+* Fix: Functionality to detect Popup triggers in Divi 5
+
+= Version 3.2.6 =
+* Fix: Visual Builder notice error related to Divi 5 conversion outline
+
+= Version 3.2.5 =
+* Improve: Support for Divi 5
+* Improve: Functionality to trigger Popups
+
 = Version 3.2.4 =
 * Improve: Functionality to detect Popup triggers
 * Improve: Add Popup Settings panel in Divi 5 Section module

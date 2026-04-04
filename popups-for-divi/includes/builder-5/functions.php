@@ -23,6 +23,8 @@ function pfd_divi5_enqueue_assets() {
         return;
     }
 	
+	if ( isset( $_GET['app_window'] ) && '1' === $_GET['app_window'] ) {
+	
     \ET\Builder\VisualBuilder\Assets\PackageBuildManager::register_package_build(
         [
             'name'    => 'd5-popupsfordivi-conversion-outline',
@@ -41,6 +43,8 @@ function pfd_divi5_enqueue_assets() {
             ],
         ]
     );
+	
+	}
 			
 	\ET\Builder\VisualBuilder\Assets\PackageBuildManager::register_package_build(
 		[
